@@ -1,8 +1,18 @@
 <html>
   <head>
-    <title>PHP Test</title>
+    <title>Login</title>
   </head>
   <body>
-    <?php echo '<p>Hello World</p>'; ?> 
+      <h2>Login Here!</h2>
+      <form action="login.php" method="post">
+        <label>Username :</label>
+        <input type="text" name="username" required><br>
 
+        <label>Password :</label>
+        <input type="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+      </form>
+
+  </body>
 </html>
