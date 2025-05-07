@@ -9,7 +9,9 @@ if(!isset($_SESSION['user'])) {
   exit();
 }
 
-  // get current date (???? why is this set for tomorrow where am i ???????)
+  // get current date 
+  //this was set for the future because of default server timezones... I grabbed eastern timezone from https://www.php.net/manual/en/timezones.america.php
+  date_default_timezone_set('America/Toronto');
   $date = date('Y-m-d H:i:s');
 ?>
 
