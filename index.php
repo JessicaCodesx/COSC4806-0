@@ -1,18 +1,9 @@
 <html>
   <head>
-    <title>Login</title>
+    <title>Welcome</title>
   </head>
   <body>
-      <h2>Login Here!</h2>
-      <form action="login.php" method="post">
-        <label>Username :</label>
-        <input type="text" name="username" required><br>
-
-        <label>Password :</label>
-        <input type="password" name="password" required><br>
-
-        <input type="submit" value="Login">
-      </form>
+      <h2>Welcome to the website!</h2>
 
   </body>
 </html>
