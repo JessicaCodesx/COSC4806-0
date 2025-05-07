@@ -23,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      $_SESSION['failed_attempts'] = 0;
      // success - redirect to index.php & save user
      $_SESSION['user'] = $user;
+     // set authenticated to true for a successful sign in
+     $_SESSION['authenticated'] = true;
      header('Location: index.php');
      exit();
    } else {

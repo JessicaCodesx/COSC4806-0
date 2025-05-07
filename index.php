@@ -19,8 +19,8 @@ if(!isset($_SESSION['user'])) {
   </head>
   <body>
       <h1>Welcome to the website!</h1>
-    <h2><?php echo $_SESSION['user']; ?></h2>
-    <h3><?php echo $date; ?></h3>
+    <h2>Welcome, <?php echo $_SESSION['user']; ?></h2>
+    <h3>Today is <?php echo $date; ?></h3>
 
     <!-- link to logout -->
     <a href="logout.php">Logout</a>
