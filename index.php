@@ -8,6 +8,9 @@ if(!isset($_SESSION['user'])) {
   header('Location: login.php');
   exit();
 }
+
+  // get current date
+  $date = date('Y-m-d H:i:s');
 ?>
 
 <html>
@@ -15,7 +18,11 @@ if(!isset($_SESSION['user'])) {
     <title>Welcome</title>
   </head>
   <body>
-      <h2>Welcome to the website!</h2>
+      <h1>Welcome to the website!</h1>
+    <h2><?php echo $_SESSION['user']; ?></h2>
+    <h3><?php echo $date; ?></h3>
 
+    <!-- link to logout -->
+    <a href="logout.php">Logout</a>
   </body>
 </html>

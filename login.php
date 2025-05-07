@@ -3,7 +3,7 @@
 session_start();
 
 // hardcode credentials 
-$username = "user";
+$username = "name";
 $password = "pass";
 
 // initialize 
