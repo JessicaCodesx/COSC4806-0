@@ -9,7 +9,7 @@ if(!isset($_SESSION['user'])) {
   exit();
 }
 
-  // get current date
+  // get current date (???? why is this set for tomorrow where am i ???????)
   $date = date('Y-m-d H:i:s');
 ?>
 
