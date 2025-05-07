@@ -2,6 +2,12 @@
 // start session for session variables
 session_start();
 
+// if user is already logged in redirect to index.php
+if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
+  header('Location: index.php');
+  exit();
+}
+
 // hardcode credentials 
 $username = "name";
 $password = "pass";
