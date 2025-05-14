@@ -15,14 +15,15 @@ if (isset($S_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 <html>
   <head>
     <title>Welcome</title>
-    <!-- adding pizzazz -->
-    <style>
-    </style>
+    <!-- linking external css sheet to prevent being blinded by css -->
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class ="main-container">
       <h1>Welcome to... this! </h1>
       <p>It's currently <?php echo $date;?></p>
       <p>Please <a href="login.php">login</a> or <a href="signup.php"> sign up</a> to continue.</p>
+    </div>
 
     <div class="footer">
       Assignment 2 - COSC4806 - Jessica Garcia

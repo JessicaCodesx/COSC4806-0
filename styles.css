@@ -1,0 +1,284 @@
+/* lets add a fun font */
+@import url ('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+   font-family: 'Poppins', sans-serif;
+    min-height: 25vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+/* animated background shapes eek */
+body::before,
+body::after {
+  content: ' ';
+  position: absolute;
+  border-radius: 50%;
+  animation: float 20s infinite ease-in-out;
+}
+
+body::before {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  top: -150px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+body::after {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 5s;
+}
+
+/* main container makeover */
+.main-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: slideIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+/* make the header pop */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #fff, #e6e6fa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* date gets its own bubble obvs */
+p:first-of-type {
+    font-size: 1rem;
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* login and sign up section for professionalism of course */
+p:last-of-type {
+    position: relative;
+    padding: 30px 0;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+p:last-of-type::before {
+    content: '✨';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+p:last-of-type::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* making the links look like lil buttons */
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 30px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+a:hover::before {
+    left: 100%;
+}
+
+/* styling for login link */
+a[href="login.php"] {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* styling for signup link */
+a[href="signup.php"] {
+    background: linear-gradient(45deg, #fa709a 0%, #fee140 100%);
+    box-shadow: 0 4px 15px rgba(250, 112, 154, 0.4);
+    font-weight: 700;
+}
+
+/* adding icons to links */
+a[href="login.php"]::after {
+    content: '  →';
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+a[href="signup.php"]::after {
+    content: '    ★';
+    display: inline-block;
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+a[href="login.php"]:hover::after {
+    transform: translateX(5px);
+}
+
+a[href="signup.php"]:hover::after {
+    animation: none;
+    transform: scale(1.3);
+}
+
+/* decorate the boring footer */
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+/* keeping the fun animations together  */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                   0 0 20px rgba(255, 255, 255, 0.3),
+                   0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7),
+                   0 0 30px rgba(255, 255, 255, 0.5),
+                   0 0 40px rgba(255, 255, 255, 0.3);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translateX(-50%) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.3) rotate(360deg);
+    }
+
+
+  @keyframes float {
+      0%, 100% {
+          transform: translateY(0) rotate(0deg);
+      }
+      33% {
+          transform: translateY(-100px) rotate(120deg);
+      }
+      66% {
+          transform: translateY(-50px) rotate(240deg);
+      }
+  }
+
+/* make it *responsive* */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    body > div {
+        padding: 40px 30px;
+    }
+
+    a {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+    }
+}
