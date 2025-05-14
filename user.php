@@ -17,16 +17,19 @@ Class User {
   public function create_user($username, $password) {
       $db = db_connect();
 
+     // here we shall hash the password for security -> https://www.php.net/manual/en/function.password-hash.php
+      $password = password_hash($password, PASSWORD_DEFAULT); // PASSWORD_DEFAULT uses bcrypt algorithm (for future reference (maybe (maybe not)))
+  
       // prepare statement using named placeholders
       $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password);");
 
-     // bind params to placeholders (avoids SQL injection)
+     // bind params to placeholders (avoiding SQL injection mwahaha)
       $statement->bindParam(':username', $username);
       $statement->bindParam(':password', $password);
 
      // execute statement after binding params
       $statement->execute();
-      return true; // to indicate success
+      return true; // to indicate success obviously
     }
   }
 }
