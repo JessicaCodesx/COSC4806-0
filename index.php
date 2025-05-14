@@ -2,7 +2,7 @@
 session_start(); // start session to access session vars
 
 // if user is already authenticated redirect to home page
-if (isset($S_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
+if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
   header('Location: home.php'); // this is a placeholder home page for now because idk whats going on
   exit();
 }

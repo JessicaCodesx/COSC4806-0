@@ -20,7 +20,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
       <h1>...hi </h1>
 
       <form>
-        <input type="button" value="Logout" onclick="window.location.href='index.php'" />
+        <input type="button" value="Logout" onclick="window.location.href='logout.php'" />
       </form>
     </div>
 
