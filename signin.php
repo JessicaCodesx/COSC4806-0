@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once ('user.php');
 
 // date of course 
@@ -33,7 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       } elseif (!password_verify($password, $result['password'])) { // password_verify method as indicated in assignment instructions
         $error = "Incorrect password, try again.";
       } else {
-        $sucess = "Login successful! Redirecting to home page...";
+
+        $_SESSION['authenticated'] = true; // set session var to indicate user is authenticated
+        
+        $success = "Login successful! Redirecting to home page...";
         header('Location: home.php'); // redirect to home page
         exit();
       }
@@ -67,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <input type="password" name="password" placeholder="Password" required />
           <input type="submit" value="Sign In" />
 
+        <!-- professionalism -->
          <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
         <input type="button" value="Back" onclick="window.location.href='index.php'" />
       </form>

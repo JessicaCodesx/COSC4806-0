@@ -1,3 +1,14 @@
+<?php
+session_start(); // access session vars
+
+// if user is not authenticated redirect to login page
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+  header('Location: signin.php');
+  exit();
+}
+
+?>
+
 <html>
   <head>
     <title>Home</title>

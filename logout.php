@@ -5,7 +5,7 @@ session_start();
 
 // destory session data and redirect to login
 session_destroy();
-header('Location: login.php');
+header('Location: index.php');
 exit();
 
 ?>
