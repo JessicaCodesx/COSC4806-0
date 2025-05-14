@@ -32,7 +32,7 @@ Class User {
       return true; // to indicate success obviously
     }
   }
-}
+
 
 
 

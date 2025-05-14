@@ -1,7 +1,4 @@
 <?php
-// start session to access session vars
-session_start();
-
 require_once ('user.php');
 
 $user = new User();
@@ -10,17 +7,6 @@ $user_list = $user->get_all_users();
 echo "<pre>";
 print_r($user_list);
 
-;// check if the user is logged in
-if(!isset($_SESSION['user'])) {
-  // if not logged in redirect to login page
-  header('Location: login.php');
-  exit();
-}
-
-  // get current date 
-  //this was set for the future because of default server timezones... I grabbed eastern timezone from https://www.php.net/manual/en/timezones.america.php
-  date_default_timezone_set('America/Toronto');
-  $date = date('Y-m-d H:i:s');
 ?>
 
 <html>
@@ -28,57 +14,6 @@ if(!isset($_SESSION['user'])) {
     <title>Welcome</title>
     <!-- adding pizzazz -->
     <style>
-      body {
-        font-family: 'Comic Sans MS', cursive, sans-serif;
-        background-color: #fff95f;
-        color: #333;
-        text-align: center;
-        padding-top: 50px;
-      }
-
-      h1 {
-        color: #ff6b6b;
-        font-size: 2.5em;
-      }
-
-      h2 {
-        color: #4ecdc4;
-        margin-top: 10px;
-      }
-
-      h3 {
-        color: #ffa502;
-        margin-top: 5px;
-      }
-
-      a {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 10px 20px;
-        background-color: #ff6b6b;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        transition: background-color 0.3s ease;
-      }
-
-      .spin-in {
-        display: inline-block;
-        animation: spin-in 1s ease-in-out;
-      }
-
-      @keyframes spin-in {
-        0% {
-          transform: rotate(-360deg);
-          opacity: 0;
-          scale: 0.5;
-        }
-        100% {
-          transform: rotate(0deg);
-          opacity: 1;
-          scale: 1;
-        }
-      }
     </style>
   </head>
   <body>
