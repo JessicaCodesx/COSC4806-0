@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       // if we get this far its safe to create user
       $user->create_user($username, $password);
-      $success = "User created successfully! You can now <a href='login.php'>login</a>.";
+      $success = "User created successfully! You can now <a href='signin.php'>sign in</a>.";
     } catch (Exception $e) {
       $error = $e->getMessage();
     } catch (PDOException $e) {
@@ -75,6 +75,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <input type="password" name="password" placeholder="Password" required />
           <input type="password" name="confirm_password" placeholder="Confirm Password" required />
           <input type="submit" value="Sign Up" />
+
+        <input type="button" value="Back" onclick="window.location.href='index.php'" />
+
       </form>
     </div>
     <div class="footer">

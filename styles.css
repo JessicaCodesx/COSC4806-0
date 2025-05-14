@@ -151,7 +151,7 @@ a:hover::before {
 }
 
 /* styling for login link */
-a[href="login.php"] {
+a[href="signin.php"] {
     background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
@@ -164,7 +164,7 @@ a[href="signup.php"] {
 }
 
 /* adding icons to links */
-a[href="login.php"]::after {
+a[href="signin.php"]::after {
     content: '  →';
     display: inline-block;
     transition: transform 0.3s ease;
