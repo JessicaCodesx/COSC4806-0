@@ -7,6 +7,10 @@
   <body>
     <div class ="main-container">
       <h1>...hi </h1>
+
+      <form>
+        <input type="button" value="Logout" onclick="window.location.href='index.php'" />
+      </form>
     </div>
 
     <div class="footer">
