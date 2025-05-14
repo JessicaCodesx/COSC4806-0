@@ -51,7 +51,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <body>
     <div class ="signup-container">
       <h1>Let's get you signed up !!!</h1> 
-      <p>By the way, it's currently <?php echo $date;?></p> // lol
+      <p>By the way, it's currently <?php echo $date;?></p> 
+
+      <?php if ($error): ?>
+      <p style ="color: red;"><?php echo $error; ?></p>
+      <?php endif; ?>
+
+      <?php if ($success): ?>
+      <p style ="color: green;"><?php echo $success; ?></p>
+      <?php endif; ?>
+
+  
+
       <form action="signup.php" method="post">
         <input type="text" name="username" placeholder="Username" required />
           <input type="password" name="password" placeholder="Password" required />
