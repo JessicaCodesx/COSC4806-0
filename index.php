@@ -22,7 +22,7 @@ if (isset($S_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     <div class ="main-container">
       <h1>Welcome to... this! </h1>
       <p>It's currently <?php echo $date;?></p>
-      <p>Please <a href="login.php">login</a> or <a href="signup.php"> sign up</a> to continue.</p>
+      <p>Please <a href="signin.php">Sign In</a> or <a href="signup.php"> Sign Up</a> to continue.</p>
     </div>
 
     <div class="footer">
