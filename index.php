@@ -1,12 +1,15 @@
 <?php
-require_once ('user.php');
+session_start(); // start session to access session vars
 
-$user = new User();
-$user_list = $user->get_all_users();
+// if user is already authenticated redirect to home page
+if (isset($S_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
+  header('Location: home.php'); // this is a placeholder home page for now because idk whats going on
+  exit();
+}
 
-echo "<pre>";
-print_r($user_list);
-
+  // display the date still for personal vindication since i did all this work to fix it
+  date_default_timezone_set('America/Toronto');
+  $date = date('Y-m-d H:i:s');
 ?>
 
 <html>
@@ -17,12 +20,12 @@ print_r($user_list);
     </style>
   </head>
   <body>
-      <h1 class="spin-in">Welcome to whatever this is!</h1>
-    <h2>Welcome, <?php echo $_SESSION['user']; ?></h2>
-    <h3>Today is <?php echo $date; ?></h3>
-    <h4> Assignment 1 - COSC4806 - Jessica Garcia </h4>
+      <h1>Welcome to... this! </h1>
+      <p>It's currently <?php echo $date;?></p>
+      <p>Please <a href="login.php">login</a> or <a href="signup.php"> sign up</a> to continue.</p>
 
-    <!-- link to logout -->
-    <a href="logout.php">Logout</a>
+    <div class="footer">
+      Assignment 2 - COSC4806 - Jessica Garcia
+    </div>
   </body>
 </html>
