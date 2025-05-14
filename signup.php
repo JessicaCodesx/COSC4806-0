@@ -20,6 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error = "All fields are required silly goose.";
   } elseif ($password !== $confirm_password) {
     $error = "Passwords don't match. Try again, type slower this time.";
+  } elseif (
+        // adding regular expression to validate min security reqs for password -> https://www.php.net/manual/en/function.preg-match.php
+        strlen($password) < 10 || 
+        !preg_match('/[A-Z]/', $password) || 
+        !preg_match('/[a-z]/', $password) || 
+        !preg_match('/[0-9]/', $password) 
+    ) { 
+    $error = "Password must be at least 10 characters long and inlcue one uppercase letter, one lowercase letter, and one number. You can do it!";
   } else {
     try {
       $user = new User();
@@ -54,14 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <p>By the way, it's currently <?php echo $date;?></p> 
 
       <?php if ($error): ?>
-      <p style ="color: red;"><?php echo $error; ?></p>
+      <p class="error-message"><?php echo $error; ?></p>
       <?php endif; ?>
 
       <?php if ($success): ?>
-      <p style ="color: green;"><?php echo $success; ?></p>
+      <p class="success-message"><?php echo $success; ?></p>
       <?php endif; ?>
-
-  
 
       <form action="signup.php" method="post">
         <input type="text" name="username" placeholder="Username" required />
