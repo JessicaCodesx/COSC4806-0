@@ -2,6 +2,13 @@
 // start session to access session vars
 session_start();
 
+require_once ('user.php');
+
+$user = new User();
+$user_list = $user->get_all_users();
+
+print_r($user_list);
+
 ;// check if the user is logged in
 if(!isset($_SESSION['user'])) {
   // if not logged in redirect to login page
